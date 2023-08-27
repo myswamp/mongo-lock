@@ -10,7 +10,6 @@ class LockDetails:
 
 class Lock:
     def __init__(self, db, collection, createOptioanlIndex: bool = False):
-        self.client = pymongo.MongoClient("mongodb://localhost:27017/")
         self.db = db
         self.collection = collection
         self.collection.create_index('resource', unique = True, background = True, sparse = True)
